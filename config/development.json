@@ -1,0 +1,16 @@
+{
+  "app": {
+    "portNumber": 9000
+  },
+  "secrets": {
+    "authTokenSecret": "e80fe601f97570d6e86031942ef2bc38"
+  },
+  "databases": [{
+    "host": "127.0.0.1",
+    "port": "27017",
+    "db": "erg",
+    "schemas": "./server/schemas.js",
+    "handle": "_"
+  }]
+}
+
