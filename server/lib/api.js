@@ -46,7 +46,7 @@ function makeRoutes(options) {
   }, {
     method: 'post',
     route: 'tasks',
-    handler: mapper.get({
+    handler: mapper.post({
       model: 'tasks',
       useEnvelope: options.useEnvelope
     })
