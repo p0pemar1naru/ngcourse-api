@@ -15,7 +15,7 @@ function isOwner(data, req) {
     return req.user && (data.owner === req.user.data.username);
 }
 
-function annotator(req, item, res) {
+function taskAnnotator(req, item, res) {
     item.meta.can = {
         edit: isOwner(item.data, req)
     };
@@ -41,7 +41,8 @@ function makeRoutes(options) {
     route: 'tasks',
     handler: mapper.get({
       model: 'tasks',
-      useEnvelope: options.useEnvelope
+      useEnvelope: options.useEnvelope,
+      annotator: taskAnnotator
     })
   }, {
     method: 'post',
@@ -60,9 +61,15 @@ function makeRoutes(options) {
         // query.owner = req.user.data.username;
       }
     })
+  }, {
+    method: 'get',
+    route: 'users',
+    handler: mapper.get({
+      model: 'users',
+      useEnvelope: options.useEnvelope
+    })
   }];
 }
-
 
 module.exports = exports = {
   makeKoastModule: function(options) {
