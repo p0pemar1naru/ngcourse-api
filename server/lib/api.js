@@ -15,7 +15,7 @@ function isOwner(data, req) {
     return req.user && (data.owner === req.user.data.username);
 }
 
-function taskAnnotator(req, item, res) {
+function taskAnnotator(item, req) {
     item.meta.can = {
         edit: isOwner(item.data, req)
     };
