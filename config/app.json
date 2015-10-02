@@ -25,9 +25,9 @@
     "credentials": true
   },
   "databases": [{
-    "host": "ds061199.mongolab.com",
-    "port": "61199",
-    "db": "ngcourse",
+    "host": "ds053778.mongolab.com",
+    "port": "53778",
+    "db": "heroku_ksd6m5xn",
     "user": "ngcourse",
     "pass": "env:DATABASE_PASSWORD",
     "schemas": "./server/schemas.js",
